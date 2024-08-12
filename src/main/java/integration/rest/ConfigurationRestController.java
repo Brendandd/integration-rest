@@ -27,24 +27,24 @@ import integration.core.service.ConfigurationService;
 @RequestMapping("/configuration")
 public class ConfigurationRestController {
 
-	@Autowired
-	protected ConfigurationService configurationService;
+    @Autowired
+    protected ConfigurationService configurationService;
 
-	@GetMapping(value = "/routes")
-	@ResponseStatus(HttpStatus.OK)
-	public List<RouteDto> getAllRoutes() throws ConfigurationException {
-		return configurationService.getAllRoutes();
-	}
+    @GetMapping(value = "/routes")
+    @ResponseStatus(HttpStatus.OK)
+    public List<RouteDto> getAllRoutes() throws ConfigurationException {
+        return configurationService.getAllRoutes();
+    }
 
-	@GetMapping(value = "/route/{routeName}")
-	@ResponseStatus(HttpStatus.OK)
-	public RouteDto getRouteByName(@PathVariable("routeName") String routeName) throws ConfigurationException {
-		return configurationService.getRouteByName(routeName);
-	}
+    @GetMapping(value = "/route/{routeName}")
+    @ResponseStatus(HttpStatus.OK)
+    public RouteDto getRouteByName(@PathVariable("routeName") String routeName) throws ConfigurationException {
+        return configurationService.getRouteByName(routeName);
+    }
 
-	@GetMapping(value = "/route/{routeName}/status")
-	@ResponseStatus(HttpStatus.OK)
-	public RouteDto getRouteStatus(@PathVariable("routeName") String routeName) throws ConfigurationException {
-		throw new UnsupportedOperationException("This method has not yet been implemented.");
-	}
+    @GetMapping(value = "/route/{routeName}/status")
+    @ResponseStatus(HttpStatus.OK)
+    public RouteDto getRouteStatus(@PathVariable("routeName") String routeName) throws ConfigurationException {
+        throw new UnsupportedOperationException("This method has not yet been implemented.");
+    }
 }
